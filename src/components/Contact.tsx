@@ -33,7 +33,7 @@ export default function Contact() {
                     <PhoneIcon sx={{ fontSize: 30 }} />
                     <Typography variant="body1">
                     <Link href="tel:+1234567890" color="inherit" underline="hover">
-                        +1 234 567 890
+                        +380675870339
                     </Link>
                     </Typography>
                 </Grid>
