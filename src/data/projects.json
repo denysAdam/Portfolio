@@ -1,0 +1,52 @@
+{
+    "projects": [
+        {
+            "title": "Paralax Space",
+            "image": "/images/1.png",
+            "code": "https://github.com/denysadam/paralaxS",
+            "preview": "https://denysadam.github.io/paralaxS/"
+        },
+        {
+            "title": "FoodBox",
+            "image": "/images/2.png",
+            "code": "https://github.com/denysadam/FoodBox",
+            "preview": "https://denysadam.github.io/FoodBox/"
+        },
+        {
+            "title": "YourBook",
+            "image": "/images/3.png",
+            "code": "https://github.com/denysadam/Bookshop",
+            "preview": "https://denysadam.github.io/Bookshop/"
+        },
+        {
+            "title": "ToDo List",
+            "image": "/images/4.png",
+            "code": "https://github.com/denysadam/ToDoList",
+            "preview": "https://denysadam.github.io/ToDoList/"
+        },
+        {
+            "title": "Weather App",
+            "image": "/images/5.png",
+            "code": "https://github.com/denysadam/Weather-app",
+            "preview": "https://denysadam.github.io/Weather-app/"
+        },
+        {
+            "title": "Pomodoro Timer",
+            "image": "/images/6.png",
+            "code": "https://github.com/denysadam/PomodoroTimer",
+            "preview": "https://denysadam.github.io/PomodoroTimer/"
+        },
+        {
+            "title": "Soundpad",
+            "image": "/images/7.png",
+            "code": "https://github.com/denysadam/soundpad",
+            "preview": "https://denysadam.github.io/soundpad/"
+        },
+        {
+            "title": "Dice Game",
+            "image": "/images/8.png",
+            "code": "https://github.com/denysadam/diceGame",
+            "preview": "https://denysadam.github.io/diceGame/"
+        }
+    ]
+}
