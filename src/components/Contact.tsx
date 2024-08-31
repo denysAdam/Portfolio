@@ -48,8 +48,8 @@ export default function Contact() {
                 <Grid item xs={12} sm={6} md={3}>
                     <LinkedInIcon sx={{ fontSize: 30 }} />
                     <Typography variant="body1">
-                    <Link href="https://linkedin.com/in/yourusername" color="inherit" underline="hover" target="_blank">
-                        linkedin.com/in/yourusername
+                    <Link href="https://linkedin.com/in/denys-adamenko-382206187" color="inherit" underline="hover" target="_blank">
+                        linkedin.com/in/denys-adamenko
                     </Link>
                     </Typography>
                 </Grid>
