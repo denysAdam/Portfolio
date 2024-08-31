@@ -1,9 +1,6 @@
 import { Container, Typography, Grid, Box } from "@mui/material";
-import HtmlIcon from '@mui/icons-material/Html';
-import CssIcon from '@mui/icons-material/Css';
-import JsIcon from '@mui/icons-material/JavaScript';
-import TsIcon from '@mui/icons-material/TypeSpecimen';
-import ReactIcon from '@mui/icons-material/ReadMore';
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact } from 'react-icons/fa';
+import { SiTypescript } from 'react-icons/si';
 import MoreIcon from '@mui/icons-material/MoreHoriz';
 import { motion } from 'framer-motion';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -20,25 +17,25 @@ export default function About() {
     };
 
     const skills = [
-        { Icon: HtmlIcon, label: 'HTML', color: '#e34f26' },
-        { Icon: CssIcon, label: 'CSS', color: '#1572B6' },
-        { Icon: JsIcon, label: 'JavaScript', color: '#f7df1e' },
-        { Icon: TsIcon, label: 'TypeScript', color: '#3178c6' },
-        { Icon: ReactIcon, label: 'React', color: '#61dafb' },
+        { Icon: FaHtml5, label: 'HTML', color: '#e34f26' },
+        { Icon: FaCss3Alt, label: 'CSS', color: '#1572B6' },
+        { Icon: FaJsSquare, label: 'JavaScript', color: '#f7df1e' },
+        { Icon: SiTypescript, label: 'TypeScript', color: '#3178c6' },
+        { Icon: FaReact, label: 'React', color: '#61dafb' },
         { Icon: MoreIcon, label: 'And much more', color: '#000' }
     ];
 
     return (
         <Container
             sx={{
-                padding: '50px 20px', // Добавляем отступы для маленьких экранов
+                padding: '50px 20px', 
                 textAlign: 'center',
                 backgroundColor: '#ffffff',
-                minHeight: '100vh', // Устанавливаем минимальную высоту экрана
+                minHeight: '100vh',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center', // Центрируем контент по вертикали
-                overflow: 'hidden', // Предотвращаем переполнение
+                justifyContent: 'center', 
+                overflow: 'hidden', 
             }}
         >
             <Typography variant="h4" gutterBottom>
