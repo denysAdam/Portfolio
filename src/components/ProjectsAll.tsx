@@ -173,7 +173,7 @@ export default function ProjectsAll() {
                         </Grid>
                     ))
                 ) : (
-                    <Typography variant="h5" sx={{paddingTop: '70px', paddingLeft: '30px', color: '#000', textAlign: 'center', width: '100%', fontWeight: '900' }}>
+                    <Typography variant="h4" sx={{paddingTop: '70px', paddingLeft: '30px', color: '#000', textAlign: 'center', width: '100%', fontWeight: '900' }}>
                         No projects found.
                     </Typography>
                 )}
