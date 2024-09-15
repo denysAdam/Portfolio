@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Typography, Grid, Box, Button } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux';
 import { showAllProjects, filterProjectsByTechnology } from '../store/slices/ProjectsSlice';

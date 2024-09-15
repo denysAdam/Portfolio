@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { scroller } from 'react-scroll';
-import ScrollSvg from "../icons/scroll.svg?react";
+
+import MouseOutlinedIcon from '@mui/icons-material/MouseOutlined';
 import { FC } from 'react';
 
 interface ScrollProps {
@@ -34,7 +35,7 @@ const Scroll: FC<ScrollProps> = ({ section }) => {
         flexDirection: 'column',
         alignItems: 'center',
         marginTop: '20px',
-        fill: '#ffb400',
+        color: '#ffb400',
         '&:hover .arrow': {
           transform: 'translateY(10px)',
           fill: '#979696',
@@ -47,7 +48,8 @@ const Scroll: FC<ScrollProps> = ({ section }) => {
       }}
       onClick={handleScroll}
     >
-      <ScrollSvg className="arrow" style={{ width: '24px', height: 'auto' }} />
+     
+      <MouseOutlinedIcon className="arrow" style={{ width: '24px', height: 'auto' }} />
       <Typography 
         variant="body1" 
         className="text" 
