@@ -1,86 +1,152 @@
-import { Container, Typography, Grid, Box } from "@mui/material";
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact } from 'react-icons/fa';
-import { SiTypescript } from 'react-icons/si';
-import MoreIcon from '@mui/icons-material/MoreHoriz';
-import { motion } from 'framer-motion';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-import { scroller } from 'react-scroll';
-import SkillCard from "../src/skillCards"; 
+import { Typography, Box } from "@mui/material";
+import Scroll from "./Scroll";
 
 export default function About() {
-    const handleScroll = () => {
-        scroller.scrollTo('projects-section', {
-            duration: 800,
-            delay: 0,
-            smooth: 'easeInOutQuart',
-        });
-    };
-
-    const skills = [
-        { Icon: FaHtml5, label: 'HTML', color: '#e34f26' },
-        { Icon: FaCss3Alt, label: 'CSS', color: '#1572B6' },
-        { Icon: FaJsSquare, label: 'JavaScript', color: '#f7df1e' },
-        { Icon: SiTypescript, label: 'TypeScript', color: '#3178c6' },
-        { Icon: FaReact, label: 'React', color: '#61dafb' },
-        { Icon: MoreIcon, label: 'And much more', color: '#000' }
-    ];
 
     return (
-        <Container
+        <Box 
             sx={{
-                padding: '50px 20px', 
-                textAlign: 'center',
-                backgroundColor: '#ffffff',
-                minHeight: '100vh',
+                backgroundColor: '#000000',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'center', 
-                overflow: 'hidden', 
+                alignItems: 'center',
+                justifyContent: 'center',
+                paddingBottom: '20px',
+                minHeight: '100vh',
             }}
         >
-            <Typography variant="h4" gutterBottom>
-                About Me
-            </Typography>
-            <Typography variant="body1" sx={{ marginBottom: '30px' }}>
-                I am a beginner frontend developer with a passion for creating beautiful and functional web applications. I enjoy learning new technologies and improving my skills every day.
-            </Typography>
-            <Typography variant="h5" gutterBottom>
-                My Skills
-            </Typography>
-            <Grid container spacing={4} justifyContent="center">
-                {skills.map(skill => (
-                    <SkillCard key={skill.label} Icon={skill.Icon} label={skill.label} color={skill.color} />
-                ))}
-            </Grid>
-            <motion.div initial="hidden" whileInView="visible" variants={{ hidden: { opacity: 0, y: 100 }, visible: { opacity: 1, y: 0, transition: { duration: 1 } } }}>
+        <Box
+            sx={{
+                padding: { xs: '20px 10px', md: '0px 20px' }, // Adjust padding for small screens
+                paddingTop: '20px',
+                backgroundColor: '#000000',
+                minHeight: '85vh',
+                display: 'flex',
+                flexDirection: { xs: 'column', md: 'row' }, // Stack in a column on small screens
+                justifyContent: 'space-between',
+                alignItems: { xs: 'center', md: 'flex-start' }, // Center align on small screens
+                overflow: 'hidden',
+                position: 'relative',
+                
+            }}
+        >
+            {/* Левый блок: About Me, фото и списочек */}
+            <Box
+                sx={{
+                    width: { xs: '100%', md: '55%' }, // Full width on small screens
+                    textAlign: { xs: 'center', md: 'left' }, // Center text on small screens
+                    marginBottom: '40px',
+                    color: '#ffffff',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: { xs: 'center', md: 'flex-end' }, // Center align on small screens
+                    justifyContent: 'center',
+                    gap: '5rem',
+                    paddingTop: '30px',
+                }}
+            >
+                {/* "About Me" title */}
+                <Typography 
+                    sx={{ 
+                        fontFamily: 'Red Hat Display', 
+                        fontSize: { xs: '3rem', md: '85px' }, // Smaller font size on small screens
+                        fontWeight: '700',
+                        textAlign: { xs: 'center', md: 'right' }, // Center text on small screens
+                        paddingLeft: { md: '150px' }, // Adjust padding for large screens
+                        lineHeight: '0.9',
+                        paddingRight: { xs: '0px', md: '100px' }, // Adjust padding for large screens
+                    }}
+                >
+                    About
+                    <br />
+                    Me
+                </Typography>
+
+                {/* Фото и списочек */}
                 <Box
-                    sx={{
-                        cursor: 'pointer',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
-                        marginTop: '20px',
-                        '&:hover .arrow': {
-                            animation: 'bounce 2s infinite',
-                        },
-                        '@keyframes bounce': {
-                            '0%, 20%, 50%, 80%, 100%': {
-                                transform: 'translateY(0)',
-                            },
-                            '40%': {
-                                transform: 'translateY(-10px)',
-                            },
-                            '60%': {
-                                transform: 'translateY(-5px)',
-                            },
+                    sx={{ 
+                        display: 'flex', 
+                        flexDirection: { xs: 'column', md: 'row' }, // Stack items in a column on small screens
+                        width: '100%', 
+                        alignItems: 'center', // Center align on small screens
+                        marginBottom: '20px',
+                        textAlign: { xs: 'center', md: 'right' }, // Center text on small screens
+                    }}
+                >
+                    <Box sx={{ flex: '1', marginRight: { xs: '0px', md: '20px' }, marginBottom: { xs: '20px', md: '0px' } }}>
+                        <img 
+                            src="../Portfolio/images/me.jpg" 
+                            alt="Profile" 
+                            style={{ 
+                                width: '60%',
+                                height: 'auto', 
+                                borderRadius: '10px',
+                                
+                            }} 
+                        />
+                    </Box>
+                    <Box sx={{ flex: '1.25', color: '#ffffff', textAlign: { xs: 'center', md: 'left' } }}>
+                        <Typography variant="h6" sx={{ marginBottom: '10px' }}>
+                            <strong>Age:</strong> 20
+                        </Typography>
+                        <Typography variant="h6" sx={{ marginBottom: '10px' }}>
+                        <strong>Education:</strong> Computer Science
+                        Petro Mohyla Black Sea National University.
+                        </Typography>
+                        <Typography variant="h6" sx={{ marginBottom: '10px' }}>
+                            <strong>Languages:</strong> English (B2),
+                                                    Russian (Native),
+                                                    Ukrainian (Native).
+                        </Typography>
+                        <Typography variant="h6">
+                            <strong>Soft skills:</strong> Communication and teamwork. Adaptability and problem-solving.
+                        </Typography>
+                    </Box>
+                </Box>
+
+            </Box>
+
+            {/* Правый блок: Текстовое описание */}
+            <Box
+                sx={{
+                    width: { xs: '100%', md: '35%' }, // Full width on small screens
+                    color: '#ffffff',
+                    textAlign: { xs: 'center', md: 'left' }, // Center text on small screens
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    alignItems: { xs: 'center', md: 'flex-start' }, // Center align on small screens
+                    paddingTop: { xs: '10px', md: '12%' },
+                }}
+            >
+                <Typography 
+                    sx={{ 
+                        lineHeight: '1.5',
+                        position: 'relative',
+                        maxWidth: '300px',
+                        fontSize: { xs: '1rem', md: '1.2rem' }, // Adjust font size for responsiveness
+                        fontWeight: '500',
+                        paddingTop: '30px', 
+                        margin: { xs: '0 auto', md: '0' }, // Center content on small screens
+                        '&::before': {
+                            content: '"\\201C"',
+                            fontSize: { xs: '3rem', md: '4rem' }, // Adjust quotation size for responsiveness
+                            color: 'white',
+                            position: 'absolute',
+                            left: { xs: '10px', md: '-50px' }, // Adjust position for responsiveness
+                            top: '-20px',
+                            fontWeight: '900',
                         },
                     }}
-                    onClick={handleScroll}
                 >
-                    <Typography variant="body1">Projects</Typography>
-                    <KeyboardArrowDownIcon className="arrow" sx={{ fontSize: 70 }} />
-                </Box>
-            </motion.div>
-        </Container>
+                    I am a beginner frontend developer with a passion for creating beautiful and functional web applications. I enjoy learning new technologies and improving my skills every day.
+                </Typography>
+            </Box>
+
+            
+        </Box>
+        {/* Кнопка для скролла вниз */}
+        <Scroll section="skills-section"></Scroll>
+        </Box>
     );
 }

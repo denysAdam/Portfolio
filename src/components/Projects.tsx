@@ -1,34 +1,46 @@
-import { Container, Typography, Grid, Box, Button } from "@mui/material";
+import { Typography, Grid, Box, Button } from "@mui/material";
 import projects from "../data/projects.json";
-
+import RightIcon from '@mui/icons-material/ArrowCircleRight';
+import { useDispatch  } from 'react-redux';
+import { setActiveP } from '../store/slices/ActivePageSlice';
+import Scroll from "./Scroll";
 export default function Projects() {
+
+
+    const dispatch = useDispatch();
+
+    const setActivePage = (page: string) => {
+        dispatch(setActiveP(page));
+    }
+
     return (
-        <Container
+        <Box
             sx={{
                 minHeight: '100vh',
                 display: 'flex',
-                marginTop: '70px',
+                backgroundColor: 'transparent',
                 flexDirection: 'column',
                 alignItems: 'center',
-                backgroundColor: '#f5f5f5',
                 padding: '20px',
                 paddingBottom: '50px',
+                position: 'relative',
+                gap: '20px',
             }}
         >
-            {/* Заголовок секции */}
+            {/* Section Title */}
             <Box sx={{ paddingBottom: '50px', display: 'flex', alignItems: 'center' }}>
-                <Typography variant="h2" component="h2">
+                <Typography  sx={{ fontWeight: '900', fontSize:{ xs: '3rem', md: '6rem'} }}>
                     Projects
                 </Typography>
             </Box>
 
-            {/* Сетка для проектов */}
-            <Grid container spacing={4} sx={{ flexGrow: 1 }}>
+            {/* Projects Grid */}
+            <Grid container spacing={4} sx={{ width: '80%' }}>
                 {projects.projects.map((project, index) => (
                     <Grid item xs={12} sm={6} md={4} key={index}>
                         <Box
                             sx={{
-                                height: 300,  // Установим фиксированную высоту для карточек
+                                height: 200,  
                                 backgroundImage: `url(${project.image})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
@@ -48,7 +60,7 @@ export default function Projects() {
                                     left: 0,
                                     width: '100%',
                                     height: '100%',
-                                    backgroundColor: 'rgba(0, 0, 0, 0.4)',  // Полупрозрачный оверлей для затемнения
+                                    backgroundColor: 'rgba(0, 0, 0, 0.7)',  
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
@@ -62,16 +74,28 @@ export default function Projects() {
                                     variant="h6"
                                     sx={{
                                         color: '#fff',
-                                        marginBottom: '10px',
+                                        marginBottom: '40px',
+                                        fontWeight: '700',
                                         textAlign: 'center',
                                     }}
                                 >
                                     {project.title}
                                 </Typography>
-                                <Box sx={{ display: 'flex', flexDirection: 'row', gap: 2 }}>
+                                <Box sx={{ display: 'flex', flexDirection: 'row', gap: 1, width: '100%', padding: '0 20px' }}>
                                     <Button
                                         variant="contained"
-                                        color="primary"
+                                        sx={{
+                                            backgroundColor: '#12D700',
+                                            textTransform: 'none', 
+                                            textAlign: 'center',
+                                            color: '#000000',
+                                            fontWeight: '700',
+                                            flex: 1,
+                                            height: '40px', 
+                                            '&:hover': {
+                                                backgroundColor: '#ffffff', 
+                                            },
+                                        }}
                                         href={project.code}
                                         target="_blank"
                                     >
@@ -79,7 +103,17 @@ export default function Projects() {
                                     </Button>
                                     <Button
                                         variant="contained"
-                                        color="secondary"
+                                        sx={{
+                                            backgroundColor: '#FFBB00', 
+                                            color: '#000000',
+                                            textTransform: 'none',
+                                            fontWeight: '700',
+                                            flex: 1,
+                                            height: '40px', 
+                                            '&:hover': {
+                                                backgroundColor: '#ffffff', 
+                                            },
+                                        }}
                                         href={project.preview}
                                         target="_blank"
                                     >
@@ -90,7 +124,40 @@ export default function Projects() {
                         </Box>
                     </Grid>
                 ))}
+
+                {/* View All Item */}
+                <Grid item xs={12} md={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+                    <Box 
+                        onClick={() => setActivePage('project')}
+                        sx={{ 
+                            display: 'flex', 
+                            alignItems: 'center', 
+                            gap: 1, 
+                            cursor: 'pointer',
+                            '&:hover svg': {
+                                transform: 'translateX(5px)', 
+                                transition: 'transform 0.3s ease', 
+                                fill: '#979696',
+                            },
+                            '&:hover .hover-text': { 
+                                color: '#ffb400',
+                            }
+                        }}
+                    >
+                        <Typography 
+                            className="hover-text" 
+                            sx={{ fontWeight: '700', color: '#000' }}
+                        >
+                            View All
+                        </Typography>
+                        <RightIcon sx={{ width: '24px', height: '24px', fill: '#ffb400' }} />
+                    </Box>
+                </Grid>
+
             </Grid>
-        </Container>
+
+            {/* Scroll to Contact Section */}
+            <Scroll section="contact-section"></Scroll>
+        </Box>
     );
 }

@@ -4,49 +4,57 @@
             "title": "Paralax Space",
             "image": "../Portfolio/images/1.png",
             "code": "https://github.com/denysadam/paralaxS",
-            "preview": "https://denysadam.github.io/paralaxS/"
+            "preview": "https://denysadam.github.io/paralaxS/",
+            "technologies": ["HTML", "CSS", "TypeScript", "React"]
         },
         {
             "title": "FoodBox",
             "image": "../Portfolio/images/2.png",
             "code": "https://github.com/denysadam/FoodBox",
-            "preview": "https://denysadam.github.io/FoodBox/"
+            "preview": "https://denysadam.github.io/FoodBox/",
+            "technologies": ["HTML", "CSS", "TypeScript", "React"]
         },
         {
             "title": "YourBook",
             "image": "../Portfolio/images/3.png",
             "code": "https://github.com/denysadam/Bookshop",
-            "preview": "https://denysadam.github.io/Bookshop/"
+            "preview": "https://denysadam.github.io/Bookshop/",
+            "technologies": ["HTML", "CSS", "JavaScript"]
         },
         {
             "title": "ToDo List",
             "image": "../Portfolio/images/4.png",
             "code": "https://github.com/denysadam/ToDoList",
-            "preview": "https://denysadam.github.io/ToDoList/"
+            "preview": "https://denysadam.github.io/ToDoList/",
+            "technologies": ["HTML", "CSS", "JavaScript"]
         },
         {
             "title": "Weather App",
             "image": "../Portfolio/images/5.png",
             "code": "https://github.com/denysadam/Weather-app",
-            "preview": "https://denysadam.github.io/Weather-app/"
+            "preview": "https://denysadam.github.io/Weather-app/",
+            "technologies": ["HTML", "CSS", "JavaScript"]
         },
         {
             "title": "Pomodoro Timer",
             "image": "../Portfolio/images/6.png",
             "code": "https://github.com/denysadam/PomodoroTimer",
-            "preview": "https://denysadam.github.io/PomodoroTimer/"
+            "preview": "https://denysadam.github.io/PomodoroTimer/",
+            "technologies": ["HTML", "CSS", "TypeScript", "React"]
         },
         {
             "title": "Soundpad",
             "image": "../Portfolio/images/7.png",
             "code": "https://github.com/denysadam/soundpad",
-            "preview": "https://denysadam.github.io/soundpad/"
+            "preview": "https://denysadam.github.io/soundpad/",
+            "technologies": ["HTML", "CSS", "JavaScript"]
         },
         {
             "title": "Dice Game",
             "image": "../Portfolio/images/8.png",
             "code": "https://github.com/denysadam/diceGame",
-            "preview": "https://denysadam.github.io/diceGame/"
+            "preview": "https://denysadam.github.io/diceGame/",
+            "technologies": ["HTML", "CSS", "JavaScript"]
         }
     ]
 }
